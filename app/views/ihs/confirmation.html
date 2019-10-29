@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-full-width">
+      <form action="/ihs/service-problem" method="get" class="form">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Number saved</h1>
+        <div class="govuk-panel__body">
+          Your immigration health surcharge (IHS) number<br><strong>{number}</strong>
+        </div>
+      </div>
+
+      <p>We have saved your IHS number to your application.</p>
+
+    <!-- Button start -->
+
+    <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+<!-- Button end -->
+    </div>
+  </div>
+
+{% endblock %}

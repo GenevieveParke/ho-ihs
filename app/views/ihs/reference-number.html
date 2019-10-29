@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/ihs/question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-">
+        <h1 class="govuk-heading-l">What is your reference number?</h1>
+          <p>When you paid the Immigration Health Surcharge, you were sent a reference number by email.</p>
+<!--Input text start-->
+       <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          Reference number
+         </label>
+           <span id="refence-name-hint" class="govuk-hint">
+            For example, IHS123456789
+           </span>
+           <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
+     </div>
+<!--Input text end-->
+
+
+<!--button start-->
+<form class="form" action="/ihs/confirmation" method="post">
+       <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+       </button>           
+       </form>
+
+<!--button end-->
+
+<!--Details-->
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If you have lost this number
+    </span>
+  </summary>
+  <div class="govuk-inset-text">
+    <div class="form-group">
+     <div class="panel panel-border-narrow">
+      Contact <a class="govuk-link" href="https://www.gov.uk/contact-ukvi-inside-outside-uk/y/inside-the-uk/visas-work-study-and-extensions">UK Visas and Immigration.</a>
+     </div>
+    </div>
+  </details>
+
+
+<!--End details-->
+
+      </div>
+  </div>
+
+
+
+
+
+
+
+<div>
+
+    </div>
+
+</main>
+
+{% endblock %}

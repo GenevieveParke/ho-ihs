@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/ihs/question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-full width">
+
+      <h1 class="govuk-heading-xl">Have you paid the Immigration Health Surcharge?</h1>
+
+      <form class="form" action="/ihsPay" method="post">
+<!-- radio buttons start -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+
+  <!--Yes -->
+   <div class="govuk-radios">
+    <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hasPaid" name="payingForIhs" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="hasPaid">
+          Yes
+        </label>
+      </div>
+
+  <!--No-->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="notPaid" name="payingForIhs" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="notPaid">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<!-- radio buttons end -->
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
