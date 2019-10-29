@@ -8,36 +8,58 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-full width">
       <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+        The Immigration Health Surcharge (IHS)
+        <span class="govuk-caption-xl"></span>
       </h1>{{releaseVersion | log }}
+
+<h2 class="govuk-heading-m">About this service</h2>
       <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+        The Immigration Health Surcharge (IHS) is a stand alone service that will be used by other UKVI applications.
       </p>
 
       <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+        The user has the option to add their existing IHS number or pay the health surcharge.  The user is required to have an IHS number before they can make payment.
       </p>
+<p>Some visas require the user to have an IHS even if they are exempt from the surcharge.</p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+<p>The <a href="https://confluence.ipttools.info/display/ES/Screens+on+IHS+Journey">screen flow</a> which includes links to the development JIRAS.</p>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+<!--Table start -->
+<table class="govuk-table">
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th scope="col" class="govuk-table__header">Screen</th>
+<th scope="col" class="govuk-table__header">Comment</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"> <a href="https://ho-ihs.herokuapp.com/ihs/question">Have you paid the Immigration Health Surchage?</a></td>
+<td class="govuk-table__cell">The start of the IHS service if an UKVI product requires the user to have an IHS number when applying for a visa.</<td>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell"><a href="https://ho-ihs.herokuapp.com/ihs/problem-service">Sorry, there is a problem with this service</a></td>
+<td class="govuk-table__cell">Displayed when the user has either paid the surcharge or registered their existing IHS number and either the payment service or the visa product is unavailable.  </th>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
-      </ul>
+</tr>
+
+</tbody>
+</table>
+<!-- Table end -->
+
+
+
+      <h2 class="govuk-heading-m">Design contraints</h2>
+
+      <p>This service has been designed with a time constraint and only the MVP will initially be delivered.  It is for this reason
+         that an email confirmation on the <a href=https://ho-ihs.herokuapp.com/ihs/confirmation">confirmation screen</a> has not be included. A confirmation email will need to be sent if/when
+         users are able to add different IHS numbers for different visa applications.</p>
+
+      <p>This design has not been user tested due to delivery time constraints.</p>
     </div>
 </div>
 
